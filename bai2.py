@@ -1,5 +1,4 @@
 # Bài 2: Tìm sản phẩm theo tên
-
 products = [
     {"name": "Laptop", "price": 15000000},
     {"name": "Mouse", "price": 200000},
@@ -8,18 +7,17 @@ products = [
 
 while True:
     # Nhập tên sản phẩm
-    ten_san_pham = input("Nhập tên sản phẩm (hoặc 'thoát' để dừng): ")
+    t_sp = input("Nhập tên sản phẩm (hoặc 'thoát' để dừng): ")
     
-    if ten_san_pham == "thoát":
+    if t_sp == "thoát":
         print("Thoát chương trình")
-        break
-    
+        break  
     # Tìm sản phẩm
-    tim_thay = False
+    tm = False
     for i in range(len(products)):
-        if products[i]["name"] == ten_san_pham:
+        if products[i]["name"] == t_sp:
             print("Giá của " + products[i]["name"] + ": " + str(products[i]["price"]) + " đồng")
-            tim_thay = True
+            tm = True
     
-    if tim_thay == False:
+    if tm == False:
         print("Không tìm thấy")

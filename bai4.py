@@ -8,11 +8,11 @@ cart = [
 
 # Tính tổng tiền từng sản phẩm và tổng tiền giỏ
 print("Chi tiết giỏ hàng:")
-tong_tien_gio = 0
+ttg = 0
 
 for i in range(len(cart)):
-    tien_tung_san_pham = cart[i]["price"] * cart[i]["quantity"]
-    print(cart[i]["name"] + ": " + str(cart[i]["price"]) + " x " + str(cart[i]["quantity"]) + " = " + str(tien_tung_san_pham) + " đồng")
-    tong_tien_gio = tong_tien_gio + tien_tung_san_pham
+    t_sp = cart[i]["price"] * cart[i]["quantity"]
+    print(cart[i]["name"] + ": " + str(cart[i]["price"]) + " x " + str(cart[i]["quantity"]) + " = " + str(t_sp) + " đồng")
+    ttg = ttg + t_sp
 
-print("\nTổng tiền giỏ hàng: " + str(tong_tien_gio) + " đồng")
+print("\nTổng tiền giỏ hàng: " + str(ttg) + " đồng")

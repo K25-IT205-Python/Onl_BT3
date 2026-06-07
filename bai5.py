@@ -9,19 +9,19 @@ students = [
 ]
 
 # Thống kê sinh viên theo lớp
-thong_ke_lop = {}
+tk_lop = {}
 
 for i in range(len(students)):
-    ten_lop = students[i]["class"]
-    if ten_lop in thong_ke_lop:
-        thong_ke_lop[ten_lop] = thong_ke_lop[ten_lop] + 1
+    t_lop = students[i]["class"]
+    if t_lop in tk_lop:
+        tk_lop[t_lop] = tk_lop[t_lop] + 1
     else:
-        thong_ke_lop[ten_lop] = 1
+        tk_lop[t_lop] = 1
 
 # In kết quả
 print("Thống kê sinh viên theo lớp:")
-print(thong_ke_lop)
+print(tk_lop)
 
 print("")
-for ten_lop in thong_ke_lop:
-    print(ten_lop + ": " + str(thong_ke_lop[ten_lop]) + " sinh viên")
+for t_lop in tk_lop:
+    print(t_lop + ": " + str(tk_lop[t_lop]) + " sinh viên")

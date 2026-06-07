@@ -14,25 +14,9 @@ while True:
     print("4. Xóa sản phẩm")
     print("5. Thoát")
     
-# Bài 6: Quản lý kho hàng
-
-inventory = [
-    {"id": 1, "name": "Laptop", "quantity": 5},
-    {"id": 2, "name": "Mouse", "quantity": 20},
-    {"id": 3, "name": "Keyboard", "quantity": 10}
-]
-
-while True:
-    print("\n=== MENU QUẢN LÝ KHO HÀNG ===")
-    print("1. Xem danh sách kho hàng")
-    print("2. Thêm sản phẩm mới")
-    print("3. Cập nhật số lượng sản phẩm")
-    print("4. Xóa sản phẩm")
-    print("5. Thoát")
+    ch = input("Chọn chức năng (1-5): ")
     
-    choice = input("Chọn chức năng (1-5): ")
-    
-    match choice:
+    match ch:
         case "1":
             print("\n=== Danh sách kho hàng ===")
             for i in range(len(inventory)):
@@ -40,36 +24,36 @@ while True:
         
         case "2":
             print("\n--- Thêm sản phẩm mới ---")
-            ten_san_pham_moi = input("Nhập tên sản phẩm: ")
-            so_luong_moi = int(input("Nhập số lượng: "))
-            id_moi = len(inventory) + 1
-            inventory.append({"id": id_moi, "name": ten_san_pham_moi, "quantity": so_luong_moi})
+            t_m = input("Nhập tên sản phẩm: ")
+            sl_m = int(input("Nhập số lượng: "))
+            id_m = len(inventory) + 1
+            inventory.append({"id": id_m, "name": t_m, "quantity": sl_m})
             print("Thêm thành công!")
         
         case "3":
             print("\n--- Cập nhật số lượng ---")
-            id_cap_nhat = int(input("Nhập ID sản phẩm cần cập nhật: "))
-            so_luong_cap_nhat = int(input("Nhập số lượng mới: "))
-            tim_thay = False
+            id_cn = int(input("Nhập ID sản phẩm cần cập nhật: "))
+            sl_cn = int(input("Nhập số lượng mới: "))
+            tm = False
             for i in range(len(inventory)):
-                if inventory[i]["id"] == id_cap_nhat:
-                    inventory[i]["quantity"] = so_luong_cap_nhat
+                if inventory[i]["id"] == id_cn:
+                    inventory[i]["quantity"] = sl_cn
                     print("Cập nhật thành công!")
-                    tim_thay = True
-            if tim_thay == False:
+                    tm = True
+            if tm == False:
                 print("Không tìm thấy sản phẩm với ID này")
         
         case "4":
             print("\n--- Xóa sản phẩm ---")
-            id_xoa = int(input("Nhập ID sản phẩm cần xóa: "))
-            tim_thay = False
+            id_x = int(input("Nhập ID sản phẩm cần xóa: "))
+            tm = False
             for i in range(len(inventory)):
-                if inventory[i]["id"] == id_xoa:
+                if inventory[i]["id"] == id_x:
                     inventory.pop(i)
                     print("Xóa thành công!")
-                    tim_thay = True
+                    tm = True
                     break
-            if tim_thay == False:
+            if tm == False:
                 print("Không tìm thấy sản phẩm với ID này")
         
         case "5":
